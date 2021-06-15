@@ -17,7 +17,7 @@ If not already done, you should follow the below links to have your environment 
 
 ### Codelab environment
 
-In addition to above pre-requisites, it will be helpful for you to read through the below docs about Adobe I/O events: 
+In addition to above pre-requisites, it will be helpful for you to read through the below docs learning about Adobe I/O events: 
 
 * [Consume Events using Journaling API](https://adobeio-codelabs-journaling-events-adobedocs.hlx.page/?src=/README.html)
 * [Building Event driven Firefly App Using Custom Events](https://adobeio-codelabs-custom-events-adobedocs.project-helix.page/?src=/README.html)
