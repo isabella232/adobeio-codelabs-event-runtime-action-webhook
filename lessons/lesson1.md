@@ -1,7 +1,7 @@
 ## Lesson 1: Setup and Overview
 
 ### Setup 
-First, let's assume you already have basic knowledge about Project Firefly and how to create a project through Adobe Developer Console using template. Follow this[here](https://www.adobe.io/apis/experienceplatform/runtime/docs.html#!adobedocs/adobeio-runtime/master/getting-started/setup.md) to setup your cli with Runtime plugin which is required as pre-requisite. The runtime cli will enable you create a runtime action and hook it up with an integration via Adobe Developer Console. 
+First, let's assume you already have basic knowledge about Project Firefly and how to create a project through Adobe Developer Console using template. Follow [this](https://www.adobe.io/apis/experienceplatform/runtime/docs.html#!adobedocs/adobeio-runtime/master/getting-started/setup.md) to setup your cli with Runtime plugin which is required as pre-requisite. The runtime cli will enable you create a runtime action and hook it up with an integration via Adobe Developer Console. 
 
 
 ### Overview
