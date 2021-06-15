@@ -1,29 +1,22 @@
-# Adobe I/O CodeLabs template
+# Events Using Runtime Actions as Webhook
+The codelab will guide you through how to consume events using runtime action as webhook. 
 
-## Getting started 
+## Background
 
-Click on the "Use this template" button to copy the template to your namespace. 
+In previous codelab [here](https://adobeio-codelabs-journaling-events-adobedocs.hlx.page/?src=/README.html) we guide you through how to consume event using Journaling API
+in this codelab, we will introduce another way to consume events - runtime action as webhook. This integration between Adobe I/O Runtime and I/O Events allow you create runtime actions to be setup as webhook endpoints on the Adobe developer console for receiving events, so that every time an event fires, your runtime action is executed 
+and the debug tracking feature allow you to debug easily.  
 
-The codelab entry point is the [README](README.md). You can put your codelab content including assets under the [lessons](/lessons) directory. The codelab [manifest.json](manifest.json) holds the navigation information and more. Link your lessons in that file in order to render the navigation.
+## Benefits of using Runtime Action as Webhook
 
-## Preview codelab locally
+There are two main benefits to choose runtime action as webhook: 
+- Built in Signature Verification 
+- Tracing actions with Activation Ids 
 
-The template codelab is based on the Project Helix https://www.project-helix.io/. Follow instructions as explained.
+## How to choose between Journaling API and Runtime Action webhook
+- Journaling API: when you have a long running(async) actions that require guaranteed event handling especially when there is a surge of events, you should consider using the [journaling approach](https://adobeio-codelabs-journaling-events-adobedocs.hlx.page/?src=/README.html) for consuming events. 
+- Runtime action webhook: If you have short-running action (that responds within 10 sec) we recommend setting up your runtime action as webhook
 
-`npm i -g @adobe/helix-cli && hlx up` is enough to get you started. Make sure to have at least `npm@6.14.x` installed and an initial commit. 
+Now, let's begin our journey to this new feature ! 
 
-## Share codelab URL
-
-You can visit https://[REPO_NAME]-[REPO_OWNER].project-helix.page to see it running.
-
-Demo: https://adobeio-codelabs-template-adobedocs.project-helix.page/ 
-
-Make sure to push your changes before sharing the URL.
-
-## Contribute to Adobe I/O CodeLabs
-
-Once your codelab is ready, submit a PR to add it to the index at https://github.com/AdobeDocs/adobeio-codelabs/blob/gh-pages/actions/index.json  
-
-
-
-  
+Next lesson: [Requirements](lessons/requirements.md)

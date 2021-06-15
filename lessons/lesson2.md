@@ -1,129 +1,47 @@
-## Lesson 2: Write your app
+## Lesson 2: Step by step guide
 
-# H1
-## H2
-### H3
-#### H4
-##### H5
-###### H6
+### Event Registration
 
-Emphasis, aka italics, with *asterisks* or _underscores_.
+- User goes to the developer console to setup events registration using this user action. User created a project on dev console as below
+![console](assets/1.png)
 
-Strong emphasis, aka bold, with **asterisks** or __underscores__.
+- Add Runtime to your project. This will create the namespace for you
+![namespace](assets/2.png)
 
-Combined emphasis with **asterisks and _underscores_**.
+- Now, go to aio-cli and login to your namespace using aio login
+Once you have the aio-cli setup with your namespace and running, go to the terminal and run the below. This will show none of the runtime entities present yet
+![cli](assets/3.png)
 
-Strikethrough uses two tildes. ~~Scratch this.~~
+- The user will create and deploy his business logic runtime action using the below command
+```bash
+aio runtime:action:create abhi_test_user_action /path_to_user_action_js_file/abhi_test_user_action.js
+``` 
+-  See the entity list again and you will see the user action created in the user namespace
+![cli2](assets/4.png)
 
-1. First ordered list item
-2. Another item
-⋅⋅* Unordered sub-list. 
-1. Actual numbers don't matter, just that it's a number
-⋅⋅1. Ordered sub-list
-4. And another item.
+-  User now sees this runtime action created in the user defined actions
+![console2](assets/5.png)
 
-⋅⋅⋅You can have properly indented paragraphs within list items. Notice the blank line above, and the leading spaces (at least one, but we'll use three here to also align the raw Markdown).
+- User now adds the event api to the project to setup the event registration
+![console3](assets/6.png)
 
-⋅⋅⋅To have a line break without a paragraph, you will need to use two trailing spaces.⋅⋅
-⋅⋅⋅Note that this line is separate, but within the same paragraph.⋅⋅
-⋅⋅⋅(This is contrary to the typical GFM line break behaviour, where trailing spaces are not required.)
+- Adding from the Experience Cloud events provider - aep_observability_catalog_events
+![console4](assets/7.png)
 
-* Unordered list can use asterisks
-- Or minuses
-+ Or pluses
+- Subscribing to the "data ingestion notification" event type
+![console5](assets/8.png)
 
-[I'm an inline-style link](https://www.google.com)
+- Generate the JWT service account credentials key pair
+![console6](assets/9.png)
 
-[I'm an inline-style link with title](https://www.google.com "Google's Homepage")
+- On the registration details page provide name and select the runtime user action created to setup event registration
+![console7](assets/10.png)
 
-[I'm a reference-style link][Arbitrary case-insensitive reference text]
+- Select the user action from the dropdown of Runtime Actions 
+![console8](assets/11.png)
 
-[I'm a relative reference to a repository file](../blob/master/LICENSE)
+-  Now, if we go to dev console we see this new "SYNC Event Registration" - with new sync event handler as webhook registered successfully
+![console9](assets/12.png)
 
-[You can use numbers for reference-style link definitions][1]
 
-Or leave it empty and use the [link text itself].
-
-URLs and URLs in angle brackets will automatically get turned into links. 
-http://www.example.com or <http://www.example.com> and sometimes 
-example.com (but not on Github, for example).
-
-Some text to show that the reference links can follow later.
-
-[arbitrary case-insensitive reference text]: https://www.mozilla.org
-[1]: http://slashdot.org
-[link text itself]: http://www.reddit.com
-
-![adobe](assets/adobe.png)
-
-Inline `code` has `back-ticks around` it.
-
-```javascript
-var s = "JavaScript syntax highlighting";
-alert(s);
-```
- 
-```python
-s = "Python syntax highlighting"
-print s
-```
- 
-```
-No language indicated, so no syntax highlighting. 
-But let's throw in a <b>tag</b>.
-```
-
-Colons can be used to align columns.
-
-| Tables        | Are           | Cool  |
-| ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
-
-There must be at least 3 dashes separating each header cell.
-The outer pipes (|) are optional, and you don't need to make the 
-raw Markdown line up prettily. You can also use inline Markdown.
-
-Markdown | Less | Pretty
---- | --- | ---
-*Still* | `renders` | **nicely**
-1 | 2 | 3
-
-> Blockquotes are very handy in email to emulate reply text.
-> This line is part of the same quote.
-
-Quote break.
-
-> This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can *put* **Markdown** into a blockquote. 
-
-<dl>
-  <dt>Definition list</dt>
-  <dd>Is something people use sometimes.</dd>
-
-  <dt>Markdown in HTML</dt>
-  <dd>Does *not* work **very** well. Use HTML <em>tags</em>.</dd>
-</dl>
-
-Three or more...
-
----
-
-Hyphens
-
-***
-
-Asterisks
-
-___
-
-Underscores
-
-Here's a line for us to start with.
-
-This line is separated from the one above by two newlines, so it will be a *separate paragraph*.
-
-This line is also a separate paragraph, but...
-This line is only separated by a single newline, so it's a separate line in the *same paragraph*.
-
-Next lesson: [Well done](welldone.md)
+Next lesson: [Verify the result](lesson3.md)
