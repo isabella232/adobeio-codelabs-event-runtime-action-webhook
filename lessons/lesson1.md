@@ -5,14 +5,12 @@ First, let's assume you already have basic knowledge about Project Firefly and h
 
 
 ### Overview
-This POC will take you through the I/O events SYNC webhook registration using your own runtime actions via console.
-As part of this POC, we will cover all the behind the scene actions happening for the below 
+This codelab will take you through the I/O events SYNC webhook registration using your own runtime actions via console.
+As part of this codelab, we will cover all the behind the scene actions happening for the below 
 
-- As an user, creating my own runtime action (having the business logic)
--  Setting up event registration using this user-defined runtime action on console and get a SYNC webhook
+- Using firefly template `publish-event`as custom event [this](https://adobeio-codelabs-custom-events-adobedocs.project-helix.page/?src=/lessons/lesson1.html)
+- Setting up event registration follow Follow [this](https://adobeio-codelabs-custom-events-adobedocs.project-helix.page/?src=/lessons/lesson2.html)
 - Ingesting subscribed events for that webhook in I/O Events pipeline
-- Showing how the signature validation is done 
 - Debug tracing on console for the Success and Failure scenarios
-- Event registration deletion - what actually gets deleted
 
 Next lesson: [Step by step guide](lesson2.md)
