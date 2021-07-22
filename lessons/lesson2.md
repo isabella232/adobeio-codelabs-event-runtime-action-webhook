@@ -1,4 +1,4 @@
-## Lesson 2: Step by Step Guide
+## Lesson 1: Step by Step Guide
 
 ### Initialize a Firefly app using template 
 If you don't have a Firefly app, please follow [this](https://adobeio-codelabs-custom-events-adobedocs.project-helix.page/?src=/lessons/lesson1.html) to create one, make sure you have `publish-event`in the template and add `I/O management API`in console. After done, and run `aio app deploy` you should have seen this 
