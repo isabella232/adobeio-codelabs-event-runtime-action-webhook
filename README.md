@@ -8,12 +8,12 @@ In previous codelab [here](https://adobeio-codelabs-journaling-events-adobedocs.
 ## Benefits of using Runtime Action as Webhook
 
 There are two main benefits to choose runtime action as webhook: 
-- Built in Signature Verification [read more] (https://www.adobe.io/apis/experienceplatform/events/docs.html#!adobedocs/adobeio-events/master/webhook/runtime_webhooks.md#built-in-signature-verification)
+- Built in Signature Verification [read more](https://www.adobe.io/apis/experienceplatform/events/docs.html#!adobedocs/adobeio-events/master/webhook/runtime_webhooks.md#built-in-signature-verification)
 - Tracing actions with Activation Ids 
 
 ## How to choose between Journaling API and Runtime Action webhook
-- Journaling API: when you have a long running(async) actions that require guaranteed event handling especially when there is a surge of events, you should consider using the [journaling approach](https://adobeio-codelabs-journaling-events-adobedocs.hlx.page/?src=/README.html)to consume events. 
-- Runtime action webhook: If you have short-running action (sync) for example, responds within 10 sec, we recommend setting up your runtime action as webhook
+- Journaling API: when you have a long running(async) actions that require guaranteed event handling especially when there is a surge of events, you should consider using the [journaling approach](https://adobeio-codelabs-journaling-events-adobedocs.hlx.page/?src=/README.html) to consume events. 
+- Runtime action webhook: if you have short-running (sync) action for example, responds within 10 sec, we recommend setting up your runtime action as webhook
 
 Now, let's begin our journey to this new feature!
 
