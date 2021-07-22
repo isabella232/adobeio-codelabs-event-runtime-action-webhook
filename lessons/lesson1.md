@@ -62,4 +62,4 @@ Now, clicking on the "save configured events", then if we go to dev console we s
 Now, if user goes to his aio-cli and do "aio runtime list", he can see the below entities created as part of the new flow of event registration
 ![add-event](assets/add-event-12.png)
 
-Next lesson: [Verify the result](lesson3.md)
+Next lesson: [Verify the result](lesson2.md)
