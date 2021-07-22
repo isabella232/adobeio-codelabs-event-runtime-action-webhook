@@ -15,7 +15,7 @@ There are two main benefits to choose runtime action as webhook:
 - Journaling API: when you have a long running(async) actions that require guaranteed event handling especially when there is a surge of events, you should consider using the [journaling approach](https://adobeio-codelabs-journaling-events-adobedocs.hlx.page/?src=/README.html) to consume events. 
 - Runtime action webhook: if you have short-running (sync) action for example, responds within 10 sec, we recommend setting up your runtime action as webhook
 
-### Overview
+## Overview
 This codelab will take you through the I/O events SYNC webhook registration using your own runtime actions via console.
 As part of this codelab, we will cover all the behind the scene actions happening for the below 
 
