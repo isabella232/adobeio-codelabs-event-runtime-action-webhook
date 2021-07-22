@@ -11,7 +11,7 @@ Now let's take a deeper look into these actions:
 
 ### Verfiy the result
 Now, we will ingest some events to see how this new SYNC webhook behaves, send through `publish-event` or using postman 
-After ingesting the event, this is the request to the sync webhook, I made on successful one and another failed one to show the debug tracking feature
+after ingesting the event, this is the request to the sync webhook, I made one successful one and another failed one to show the debug tracking feature
 ![debug-13](assets/debug-tracing-13.png)
 
  Now we can see json response returned from the main event handler webhook in the debug tracing
@@ -22,7 +22,7 @@ The debug tracing response in case of user action code failure. Note that, now t
 ![debug-15](assets/debug-tracing-15.png)
 ![debug-15](assets/debug-tracing-16.png)
 
-Debug Tracing is a pretty important tool on Developer Console for users who want to be informed whether their runtime action invocation is successful or not or what it responds. However, in case of any failed invocation to your webhook, you will get an error response body with an activation id for the same. This helps users to debug their actions as below
+Debug tracing is a pretty important tool on Developer Console for users who want to be informed whether their runtime action invocation is successful or not or what it responds. However, in case of any failed invocation to your webhook, you will get an error response body with an activation id for the same. This helps users to debug their actions as below
 
 This activation id you can use in the `aio cli` to trace the actual error occurred in your invocation by doing 
 ```
