@@ -1,4 +1,4 @@
-## Lesson 3: Verify the result
+## Lesson 2: Verify the result
 
 ### Deep dive in
 Now let's take a deeper look into these actions:
@@ -19,7 +19,7 @@ After ingesting the event, this is the request to the sync webhook, I made on su
 
 
 The debug tracing response in case of user action code failure. Note that, now the json response includes the activation id of the failed user_sequence (using which user can trace it down to his action code failure) along with the exact user code failure message.
-![debug-15](assets/debug-tracing-14.png)
+![debug-15](assets/debug-tracing-15.png)
 ![debug-15](assets/debug-tracing-16.png)
 
 Debug Tracing is a pretty important tool on Developer Console for users who want to be informed whether their runtime action invocation is successful or not or what it responds. However, in case of any failed invocation to your webhook, you will get an error response body with an activation id for the same. This helps users to debug their actions as below
