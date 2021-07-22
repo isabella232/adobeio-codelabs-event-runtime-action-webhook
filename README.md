@@ -15,6 +15,13 @@ There are two main benefits to choose runtime action as webhook:
 - Journaling API: when you have a long running(async) actions that require guaranteed event handling especially when there is a surge of events, you should consider using the [journaling approach](https://adobeio-codelabs-journaling-events-adobedocs.hlx.page/?src=/README.html) to consume events. 
 - Runtime action webhook: if you have short-running (sync) action for example, responds within 10 sec, we recommend setting up your runtime action as webhook
 
-Now, let's begin our journey to this new feature!
+### Overview
+This codelab will take you through the I/O events SYNC webhook registration using your own runtime actions via console.
+As part of this codelab, we will cover all the behind the scene actions happening for the below 
+
+- Using firefly template `publish-event`as custom event [click this](https://adobeio-codelabs-custom-events-adobedocs.project-helix.page/?src=/lessons/lesson1.html)
+- Setting up event registration follow [this](https://adobeio-codelabs-custom-events-adobedocs.project-helix.page/?src=/lessons/lesson2.html)
+- Ingesting subscribed events for that webhook in I/O Events pipeline
+- Debug tracing on console for the Success and Failure scenarios
 
 Next lesson: [Requirements](lessons/requirements.md)
