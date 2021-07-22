@@ -9,7 +9,7 @@ and here is the project I set up at adobe developer console
 
 ### Event Registration
 
-- Follow the [this](https://adobeio-codelabs-custom-events-adobedocs.project-helix.page/?src=/lessons/lesson2.html) to register the event provider, in my case, while at the step of 
+- Follow [this](https://adobeio-codelabs-custom-events-adobedocs.project-helix.page/?src=/lessons/lesson2.html) to register the event provider, in my case, while at the step:
 ```
 aio event registration create 
 ``` 
@@ -29,7 +29,7 @@ It will show you a sample of JSON format, make sure you select `webhook` in my c
 }
 ```
 
-- After finish the steps above, you should be able to see in your terminal that you successfully create register the event, and you will also see it in at adobe developer console under the left bottom corner `event` your registration provider `eventrt` show up there. 
+- After finish the steps above, you should be able to see in your terminal that you successfully create register the event, and you will also see it at adobe developer console under the left bottom corner `event` your registration provider `eventrt` will show up there
 ![console-event](assets/console-event-3.png)
 
 
