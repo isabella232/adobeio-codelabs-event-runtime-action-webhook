@@ -3,17 +3,17 @@ The codelab will guide you through how to consume events using runtime action as
 
 ## Background
 
-In previous codelab [here](https://adobeio-codelabs-journaling-events-adobedocs.hlx.page/?src=/README.html) we guide you through how to consume event using Journaling API. In this codelab, we will introduce another way to consume events - runtime action as webhook. This integration between Adobe I/O Runtime and I/O Events allow you create runtime actions to be setup as webhook endpoints on the Adobe developer console for receiving events, so that every time an event fires, your runtime action is executed and the debug tracking feature allow you to debug easily.  
+In previous codelab [here](https://adobeio-codelabs-journaling-events-adobedocs.hlx.page/?src=/README.html) we guide you through how to consume event using Journaling API. In this codelab, we will introduce another way to consume events - runtime action as webhook. This integration between Adobe I/O Runtime and I/O Events allow you create runtime actions to be setup as webhook endpoints on the Adobe developer console for receiving events, so that every time an event fires, your runtime action is executed and the debug tracing feature allow you to debug easily.  
 
 ## Benefits of using Runtime Action as Webhook
 
 There are two main benefits to choose runtime action as webhook: 
-- Built in Signature Verification 
+- Built in Signature Verification [read more] (https://www.adobe.io/apis/experienceplatform/events/docs.html#!adobedocs/adobeio-events/master/webhook/runtime_webhooks.md#built-in-signature-verification)
 - Tracing actions with Activation Ids 
 
 ## How to choose between Journaling API and Runtime Action webhook
 - Journaling API: when you have a long running(async) actions that require guaranteed event handling especially when there is a surge of events, you should consider using the [journaling approach](https://adobeio-codelabs-journaling-events-adobedocs.hlx.page/?src=/README.html)to consume events. 
-- Runtime action webhook: If you have short-running action for example, responds within 10 sec, we recommend setting up your runtime action as webhook
+- Runtime action webhook: If you have short-running action (sync) for example, responds within 10 sec, we recommend setting up your runtime action as webhook
 
 Now, let's begin our journey to this new feature!
 
