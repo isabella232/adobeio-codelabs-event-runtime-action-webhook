@@ -7,6 +7,7 @@ If you don't have a Firefly app, please follow [this](https://adobeio-codelabs-c
 and here is the project I set up at adobe developer console 
 ![consoleproject](assets/console-project-2.png)
 
+
 ### Event Registration
 
 - Follow [this](https://adobeio-codelabs-custom-events-adobedocs.project-helix.page/?src=/lessons/lesson2.html) to register the event provider, in my case, while at the step:
@@ -30,7 +31,8 @@ It will show you a sample of JSON format, make sure you select `webhook` in my c
 ```
 
 - After finish the steps above, you should be able to see in your terminal that you successfully create register the event, and you will also see it at adobe developer console under the left bottom corner `event` your registration provider `eventrt` will show up there
-![console-event](assets/console-event-3.png)
+![console-event](assets/console-event-3.png
+
 
 
 ### Event Runtime Integration 
@@ -53,8 +55,8 @@ It will show you a sample of JSON format, make sure you select `webhook` in my c
 - Generate the JWT service account credentials key pair
 ![add-event](assets/add-event-9.png)
 
-- On the registration details page provide name and select the runtime user action created to setup event registration, select the user action from the dropdown of Runtime Actions 
-![add-event](assets/add-event-10.png)
+- On the registration details page provide name and select the runtime user action created to setup event registration, select the user action from the dropdown of Runtime Actions, as we create the event consumer using generic/index.js, so we will choose this one
+![add-event](assets/add-event-10-2.png)
 
 Now, clicking on the "save configured events", then if we go to dev console we see this new "eventrt" - with new sync event handler as webhook registered successfully
 ![add-event](assets/add-event-11.png)
