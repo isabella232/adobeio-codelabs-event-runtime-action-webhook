@@ -8,31 +8,25 @@ Now let's take a deeper look into these actions:
 - `3rd_party_custom_events_3C9419175E9D393C0A495E39@AdobeOrg_2a0237a4-f0d3-45e9-8179-10ab21ef929c_eventrt_7Z5KH5vv6X` - the user sequence created taking the validate action as first action and user runtime action as second action. Created with the same unique identifier suffixed at the end of its name to bind this user sequence with the event registration in 1:1 fashion.
 
 
-### Verfiy the result
-Now, we will ingest some events to see how this new SYNC webhook behaves, send through `publish-event` or using postman 
-after ingesting the event, this is the request to the sync webhook, I made one successful one and another failed one to show the debug tracking feature
-![debug-13](assets/debug-tracing-13.png)
+### Tracing Actions with Activation Ids
+Debug Tracing is a pretty important tool on Developer Console for users who want to be informed whether their runtime action invocation is successful or not or what it responds.
+After setting up a runtime action as webhook, upon its successful invocation, you can see custom response returned from your own runtime action in the Debug Tracing webhook response section as below.
+![debug-1](assets/debug-tracing-1.png)
 
- Now we can see json response returned from the main event handler webhook in the debug tracing
-![debug-14](assets/debug-tracing-14.png)
+ However, in case of any failed invocation to your webhook, you will get an error response body with an activation id for the same. This helps users to debug their actions as below
 
+This activation id you can use in the aio cli to trace the actual error occurred in your invocation by doing aio rt activation logs <failed_activation_id>
 
-The debug tracing response in case of user action code failure. Note that, now the json response includes the activation id of the failed user_sequence (using which user can trace it down to his action code failure) along with the exact user code failure message.
-![debug-15](assets/debug-tracing-15.png)
-![debug-15](assets/debug-tracing-16.png)
-
-Debug tracing is a pretty important tool on Developer Console for users who want to be informed whether their runtime action invocation is successful or not or what it responds. However, in case of any failed invocation to your webhook, you will get an error response body with an activation id for the same. This helps users to debug their actions as below
-
-This activation id you can use in the `aio cli` to trace the actual error occurred in your invocation by doing 
-```
-aio rt activation logs <failed_activation_id>
-```
-You may now get activation ids for two types of failed activations:
+You may now get activation ids for two types of failed activations -
 
 - Signature Validator Action
 - Your Runtime Action
+- In case of failure in the signature verification step, this is how you will get the error response and the failed activation id for the same.
 
-In case of failure in the signature verification step, this is how you will get the error response and the failed activation id for the same.
+![debug-2](assets/debug-tracing-2.png)
 
+For failed invocation to your runtime action, you will get an error response with the failed activation id for the same like below
+
+![debug-3](assets/debug-tracing-3.png)
 
 Next lesson: [Well done](welldone.md)
