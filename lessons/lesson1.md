@@ -55,7 +55,9 @@ It will show you a sample of JSON format, make sure you select `webhook` in my c
 - Generate the JWT service account credentials key pair
 ![add-event](assets/add-event-9.png)
 
-- On the registration details page provide name and select the runtime user action created to setup event registration, select the user action from the dropdown of Runtime Actions, as we create the event consumer using generic/index.js, so we will choose this one
+- On the registration details page provide name and select the runtime user action created to setup event registration, select the user action from the dropdown of Runtime Actions, as we create the event consumer using generic/index.js from `generic` template, so we will choose this one
+
+Note: Please refer to [this](https://github.com/AdobeDocs/adobeio-samples-journaling-events/tree/main/event-consumer)to create your event-consumer
 ![add-event](assets/add-event-10-2.png)
 
 Now, clicking on the "save configured events", then if we go to dev console we see this new "eventrt" - with new sync event handler as webhook registered successfully
