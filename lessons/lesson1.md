@@ -57,7 +57,89 @@ It will show you a sample of JSON format, make sure you select `webhook` in my c
 
 - On the registration details page provide name and select the runtime user action created to setup event registration, select the user action from the dropdown of Runtime Actions, as we create the event consumer using generic/index.js from `generic` template, so we will choose this one
 
-Note: Please refer to [this](https://github.com/AdobeDocs/adobeio-samples-journaling-events/tree/main/event-consumer)to create your event-consumer
+Note: here is one sample code that you could refer to create your own event-consumer: 
+```
+/* this is a sample action sent a message to slack */
+var request = require('request');
+
+/* default slackwebhook and channel add yours here and replace the TODO below */
+var slackWebhook = "Your webhook";
+var slackChannel = "your channel";
+
+async function main (params) {
+  
+  /* print event detail */
+  console.log('in main + event detail: ', params.event);
+
+  var returnObject = {
+    statusCode: 200,
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: ""
+  };
+
+  /* handle the challenge */
+  if (params.challenge) {
+
+    console.log('Returning challenge: ' + params.challenge);
+
+    returnObject.body = new Buffer(JSON.stringify({
+      "challenge": params.challenge
+    })).toString('base64');
+
+    return returnObject;
+
+  } else {
+
+    /* we need it to run asynchronously, so we are returning a Promise */
+    return new Promise(function (resolve, reject) {
+
+      var slackMessage = " Event received: " + JSON.stringify(params);
+
+      var payload = {
+        "channel": slackChannel,
+        "username": "incoming-webhook",
+        "text": slackMessage,
+        "mrkdwn": true,
+      };
+
+      var options = {
+        method: 'POST',
+        url: slackWebhook,
+        headers:
+            { 'Content-type': 'application/json' },
+        body: JSON.stringify(payload)
+      };
+
+      request(options, function (error, response, body) {
+        if (error) {
+
+          console.log("ERROR: fail to post " + response);
+
+          reject(error);
+
+        } else {
+
+          console.log ("SUCCESS: posted to slack " + slackMessage);
+
+          returnObject.body = new Buffer(JSON.stringify({
+            "slackMessage": slackMessage
+          })).toString('base64');
+
+          resolve(returnObject);
+        }
+
+      });
+
+    });
+
+  }
+}
+
+exports.main = main
+```
+
 ![add-event](assets/add-event-10-2.png)
 
 Now, clicking on the "save configured events", then if we go to dev console we see this new "eventrt" - with new sync event handler as webhook registered successfully
