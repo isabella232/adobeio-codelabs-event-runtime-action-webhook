@@ -33,31 +33,26 @@ It will show you a sample of JSON format, make sure you select `webhook` in my c
 - After finish the steps above, you should be able to see in your terminal that you successfully create register the event, and you will also see it at adobe developer console under the left bottom corner `event` your registration provider `eventrt` will show up there
 ![console-event](assets/console-event-3.png
 
+### Create Event Consumer 
+We will use the `generic` project firefly template to modify the code to create event consumer 
+Note: here is one simple sample code that you could refer to test the webhook feature: 
+```
+function main(params) {
+  console.log('user action is processing event ' + params.event);
+  var event = params.event;
+  var id = event.id;
+  var event_processed = "Event Received And Processed :: " + JSON.stringify(params.event)
+    return {
+        body: event_processed,
+        statusCode: 200,
+        headers: {
+          'Content-Type': 'application/json'
+        }
+    };
+  }
+```
+or you could use below one to create webhook send to slack 
 
-
-### Event Runtime Integration 
-
-- With all above setup, now you get your `providerId`, `eventCode`, you can go back to your firefly App trying to invoke a custom event like below: 
-![invoke-event](assets/event-invoke-4.png)
-
-- You should see this runtime action created in the `user defined actions` 
-![user-define-action](assets/user-define-action-5.png)
-
-- User now adds the event api to the project to setup the event registration
-![add-event](assets/add-event-6.png)
-
-- Adding from our custom event provider we just registered `eventruntime` (you should be able to see your register event in this list)
-![add-event](assets/add-event-7.png)
-
-- Subscribing to the "eventrt" event type
-![add-event](assets/add-event-8.png)
-
-- Generate the JWT service account credentials key pair
-![add-event](assets/add-event-9.png)
-
-- On the registration details page provide name and select the runtime user action created to setup event registration, select the user action from the dropdown of Runtime Actions, as we create the event consumer using generic/index.js from `generic` template, so we will choose this one
-
-Note: here is one sample code that you could refer to create your own event-consumer: 
 ```
 /* this is a sample action sent a message to slack */
 var request = require('request');
@@ -140,6 +135,27 @@ async function main (params) {
 exports.main = main
 ```
 
+### Event Runtime Integration 
+
+- With all above setup, now you get your `providerId`, `eventCode`, you can go back to your firefly App trying to invoke a custom event like below: 
+![invoke-event](assets/event-invoke-4.png)
+
+- You should see this runtime action created in the `user defined actions` 
+![user-define-action](assets/user-define-action-5.png)
+
+- User now adds the event api to the project to setup the event registration
+![add-event](assets/add-event-6.png)
+
+- Adding from our custom event provider we just registered `eventruntime` (you should be able to see your register event in this list)
+![add-event](assets/add-event-7.png)
+
+- Subscribing to the "eventrt" event type
+![add-event](assets/add-event-8.png)
+
+- Generate the JWT service account credentials key pair
+![add-event](assets/add-event-9.png)
+
+- On the registration details page provide name and select the runtime user action created to setup event registration, select the user action from the dropdown of Runtime Actions, as we create the event consumer using generic/index.js from `generic` template, so we will choose this one
 ![add-event](assets/add-event-10-2.png)
 
 Now, clicking on the "save configured events", then if we go to dev console we see this new "eventrt" - with new sync event handler as webhook registered successfully
