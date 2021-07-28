@@ -135,7 +135,7 @@ async function main (params) {
 
 exports.main = main
 ```
-Please note that: An action used as event consumer does not need to be `web: yes`, and doesn't need `require-adobe-auth: true` in the manifest.yml file, please modify accordingly to asure app security. 
+Please note that: An action used as event consumer does not need to be `web: yes`, and doesn't need `require-adobe-auth: true` in the manifest.yml file, please modify accordingly to ensure your app security. 
 
 ### Event Runtime Integration 
 
