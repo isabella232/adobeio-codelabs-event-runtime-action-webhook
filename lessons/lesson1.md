@@ -34,7 +34,8 @@ It will show you a sample of JSON format, make sure you select `webhook` in my c
 ![console-event](assets/console-event-3.png)
 
 ### Create Event Consumer 
-We will use the `generic` project firefly template to modify the code to create event consumer 
+We will use the `generic` project firefly template to modify the code to create event consumer, I will name the action to `consume-event`, after deploy the event you will be able to set up an event registration runtime actions you deployed.
+
 Note: here is one simple sample code that you could refer to test the webhook feature: 
 ```
 function main(params) {
@@ -156,7 +157,7 @@ Please note that: An action used as event consumer does not need to be `web: yes
 - Generate the JWT service account credentials key pair
 ![add-event](assets/add-event-9.png)
 
-- On the registration details page provide name and select the runtime user action created to setup event registration, select the user action from the dropdown of Runtime Actions, as we create the event consumer using generic/index.js from `generic` template, so we will choose this one, then click `Save configured events`. This will create an event registration with an event handler webhook pointing to your runtime action.
+- On the registration details page provide name and select the runtime user action created to setup event registration, select the user action from the dropdown of Runtime Actions, as we create the `consume-event`and deployed previously, so we will choose this one, then click `Save configured events`. This will create an event registration with an event handler webhook pointing to your runtime action.
 ![add-event](assets/add-event-10-3.png)
 
 - If user goes to his aio-cli and do "aio runtime list", he can see the below entities created as part of the new flow of event registration
