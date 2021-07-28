@@ -1,7 +1,7 @@
 ## Lesson 1: Step by Step Guide
 
 ### Initialize a Firefly app using template 
-If you don't have a Firefly app, please follow [this](https://adobeio-codelabs-custom-events-adobedocs.project-helix.page/?src=/lessons/lesson1.html) to create one, make sure you have `publish-event`in the template and add `I/O management API`in console. After done, and run `aio app deploy` you should have seen this 
+If you don't have a Firefly app, please follow [Create a New Firefly App from Template](https://adobeio-codelabs-custom-events-adobedocs.project-helix.page/?src=/lessons/lesson1.html) to create one, make sure you have `publish-event`in the template and add `I/O management API`in console. After done, and run `aio app deploy` you should have seen this 
 ![publishevent](assets/publishevent-1.png)
 
 and here is the project I set up at adobe developer console 
@@ -10,7 +10,7 @@ and here is the project I set up at adobe developer console
 
 ### Event Registration
 
-- Follow [this](https://adobeio-codelabs-custom-events-adobedocs.project-helix.page/?src=/lessons/lesson2.html) to register the event provider, in my case, while at the step:
+- Follow [Register the App as Event Provider](https://adobeio-codelabs-custom-events-adobedocs.project-helix.page/?src=/lessons/lesson2.html) to register the event provider, in my case, while at the step:
 ```
 aio event registration create 
 ``` 
@@ -31,7 +31,7 @@ It will show you a sample of JSON format, make sure you select `webhook` in my c
 ```
 
 - After finish the steps above, you should be able to see in your terminal that you successfully create register the event, and you will also see it at adobe developer console under the left bottom corner `event` your registration provider `eventrt` will show up there
-![console-event](assets/console-event-3.png
+![console-event](assets/console-event-3.png)
 
 ### Create Event Consumer 
 We will use the `generic` project firefly template to modify the code to create event consumer 
@@ -134,6 +134,7 @@ async function main (params) {
 
 exports.main = main
 ```
+Please note that: An action used as event consumer does not need to be `web: yes`, and doesn't need `require-adobe-auth: true` in the manifest.yml file, please modify accordingly to asure app security. 
 
 ### Event Runtime Integration 
 
@@ -158,10 +159,10 @@ exports.main = main
 - On the registration details page provide name and select the runtime user action created to setup event registration, select the user action from the dropdown of Runtime Actions, as we create the event consumer using generic/index.js from `generic` template, so we will choose this one
 ![add-event](assets/add-event-10-2.png)
 
-Now, clicking on the "save configured events", then if we go to dev console we see this new "eventrt" - with new sync event handler as webhook registered successfully
+- Now, clicking on the "save configured events", then if we go to dev console we see this new "eventrt" - with new sync event handler as webhook registered successfully
 ![add-event](assets/add-event-11.png)
 
-Now, if user goes to his aio-cli and do "aio runtime list", he can see the below entities created as part of the new flow of event registration
+- If user goes to his aio-cli and do "aio runtime list", he can see the below entities created as part of the new flow of event registration
 ![add-event](assets/add-event-12.png)
 
 Next lesson: [Verify the result](lesson2.md)
