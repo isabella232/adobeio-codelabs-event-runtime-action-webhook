@@ -156,11 +156,8 @@ Please note that: An action used as event consumer does not need to be `web: yes
 - Generate the JWT service account credentials key pair
 ![add-event](assets/add-event-9.png)
 
-- On the registration details page provide name and select the runtime user action created to setup event registration, select the user action from the dropdown of Runtime Actions, as we create the event consumer using generic/index.js from `generic` template, so we will choose this one
+- On the registration details page provide name and select the runtime user action created to setup event registration, select the user action from the dropdown of Runtime Actions, as we create the event consumer using generic/index.js from `generic` template, so we will choose this one, then click `Save configured events`. This will create an event registration with an event handler webhook pointing to your runtime action.
 ![add-event](assets/add-event-10-2.png)
-
-- Now, clicking on the "save configured events", then if we go to dev console we see this new "eventrt" - with new sync event handler as webhook registered successfully
-![add-event](assets/add-event-11.png)
 
 - If user goes to his aio-cli and do "aio runtime list", he can see the below entities created as part of the new flow of event registration
 ![add-event](assets/add-event-12.png)
