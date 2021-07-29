@@ -1,15 +1,9 @@
 ## Well done
 
-You have successfully completed the codelab and learnt how to build an awesome app.
+You have successfully completed the codelab and learnt how to using the runtime actions webhook
 
-### Achievements
+### What you learned
+- Now you see in debug tracing the response from your own action
+- On failures, you get the activation id in debug tracing
+- No more duplicate action invocations
 
-You have learned: 
-
-* A
-* B
-* C
-
-### What's next ?
-
-Stay tuned.

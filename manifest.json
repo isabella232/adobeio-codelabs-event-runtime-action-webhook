@@ -1,5 +1,5 @@
 {
-  "title": "CodeLab title",
+  "title": "Events Using Runtime Actions as Webhook",
   "repository": "https://github.com/AdobeDocs/adobeio-codelabs-template",
   "navigation": [{
     "title": "Introduction",
@@ -8,10 +8,10 @@
     "title": "Requirements",
     "url": "/lessons/requirements"
   }, {
-    "title": "Lesson 1: Bootstrap your app",
-    "url": "/lessons/lesson1"
+    "title": "Lesson 1: Step by Step Guide",
+    "url": "/lessons/lesson2"
   }, {
-    "title": "Lesson 2: Write your app",
+    "title": "Lesson 2: Verify the result",
     "url": "/lessons/lesson2"
   }, {
     "title": "Well done",

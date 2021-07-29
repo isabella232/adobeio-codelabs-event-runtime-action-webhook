@@ -1,129 +1,32 @@
-## Lesson 2: Write your app
+## Lesson 2: Verify the result
 
-# H1
-## H2
-### H3
-#### H4
-##### H5
-###### H6
+### Deep dive in
+Now let's take a deeper look into these actions:
+- `bound_package` : default param package created as binding of the shared package deployed in adobe namespace and having the validate action inside itself. Now, this bound_package will also have the validate_action residing in it due to binding.
+- `acp` - package created which will keep the new sync_event_handler sequence
+- `sync_Event_handler_7Z5KH5vv6X` - the new event handler unique to this registration with webhook url
+- `3rd_party_custom_events_3C9419175E9D393C0A495E39@AdobeOrg_2a0237a4-f0d3-45e9-8179-10ab21ef929c_eventrt_7Z5KH5vv6X` - the user sequence created taking the validate action as first action and user runtime action as second action. Created with the same unique identifier suffixed at the end of its name to bind this user sequence with the event registration in 1:1 fashion.
 
-Emphasis, aka italics, with *asterisks* or _underscores_.
 
-Strong emphasis, aka bold, with **asterisks** or __underscores__.
+### Tracing Actions with Activation Ids
+Debug Tracing is a pretty important tool on Developer Console for users who want to be informed whether their runtime action invocation is successful or not or what it responds.
+After setting up a runtime action as webhook, upon its successful invocation, you can see custom response returned from your own runtime action in the Debug Tracing webhook response section as below.
+![debug-1](assets/debug-tracing-1.png)
 
-Combined emphasis with **asterisks and _underscores_**.
+ However, in case of any failed invocation to your webhook, you will get an error response body with an activation id for the same. This helps users to debug their actions as below
 
-Strikethrough uses two tildes. ~~Scratch this.~~
+This activation id you can use in the aio cli to trace the actual error occurred in your invocation by doing aio rt activation logs <failed_activation_id>
 
-1. First ordered list item
-2. Another item
-⋅⋅* Unordered sub-list. 
-1. Actual numbers don't matter, just that it's a number
-⋅⋅1. Ordered sub-list
-4. And another item.
+You may now get activation ids for two types of failed activations -
 
-⋅⋅⋅You can have properly indented paragraphs within list items. Notice the blank line above, and the leading spaces (at least one, but we'll use three here to also align the raw Markdown).
+- Signature Validator Action
+- Your Runtime Action
+- In case of failure in the signature verification step, this is how you will get the error response and the failed activation id for the same.
 
-⋅⋅⋅To have a line break without a paragraph, you will need to use two trailing spaces.⋅⋅
-⋅⋅⋅Note that this line is separate, but within the same paragraph.⋅⋅
-⋅⋅⋅(This is contrary to the typical GFM line break behaviour, where trailing spaces are not required.)
+![debug-2](assets/debug-tracing-2.png)
 
-* Unordered list can use asterisks
-- Or minuses
-+ Or pluses
+For failed invocation to your runtime action, you will get an error response with the failed activation id for the same like below
 
-[I'm an inline-style link](https://www.google.com)
-
-[I'm an inline-style link with title](https://www.google.com "Google's Homepage")
-
-[I'm a reference-style link][Arbitrary case-insensitive reference text]
-
-[I'm a relative reference to a repository file](../blob/master/LICENSE)
-
-[You can use numbers for reference-style link definitions][1]
-
-Or leave it empty and use the [link text itself].
-
-URLs and URLs in angle brackets will automatically get turned into links. 
-http://www.example.com or <http://www.example.com> and sometimes 
-example.com (but not on Github, for example).
-
-Some text to show that the reference links can follow later.
-
-[arbitrary case-insensitive reference text]: https://www.mozilla.org
-[1]: http://slashdot.org
-[link text itself]: http://www.reddit.com
-
-![adobe](assets/adobe.png)
-
-Inline `code` has `back-ticks around` it.
-
-```javascript
-var s = "JavaScript syntax highlighting";
-alert(s);
-```
- 
-```python
-s = "Python syntax highlighting"
-print s
-```
- 
-```
-No language indicated, so no syntax highlighting. 
-But let's throw in a <b>tag</b>.
-```
-
-Colons can be used to align columns.
-
-| Tables        | Are           | Cool  |
-| ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
-
-There must be at least 3 dashes separating each header cell.
-The outer pipes (|) are optional, and you don't need to make the 
-raw Markdown line up prettily. You can also use inline Markdown.
-
-Markdown | Less | Pretty
---- | --- | ---
-*Still* | `renders` | **nicely**
-1 | 2 | 3
-
-> Blockquotes are very handy in email to emulate reply text.
-> This line is part of the same quote.
-
-Quote break.
-
-> This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can *put* **Markdown** into a blockquote. 
-
-<dl>
-  <dt>Definition list</dt>
-  <dd>Is something people use sometimes.</dd>
-
-  <dt>Markdown in HTML</dt>
-  <dd>Does *not* work **very** well. Use HTML <em>tags</em>.</dd>
-</dl>
-
-Three or more...
-
----
-
-Hyphens
-
-***
-
-Asterisks
-
-___
-
-Underscores
-
-Here's a line for us to start with.
-
-This line is separated from the one above by two newlines, so it will be a *separate paragraph*.
-
-This line is also a separate paragraph, but...
-This line is only separated by a single newline, so it's a separate line in the *same paragraph*.
+![debug-3](assets/debug-tracing-3.png)
 
 Next lesson: [Well done](welldone.md)
